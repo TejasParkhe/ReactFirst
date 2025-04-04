@@ -1,0 +1,33 @@
+.about-top {
+  background-color: #0463fa;
+  padding: 2%;
+
+  h1 {
+    color: white;
+  }
+  h2 {
+    color: white;
+    span {
+      color: rgb(216, 177, 255);
+    }
+  }
+}
+.aboutus {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px solid white;
+  background-color: #0463fa;
+  color: white;
+  .border-b {
+    border-radius: 5px solid white;
+  }
+  p {
+    color: white;
+  }
+}
+.about {
+  display: flex;
+  border: 10px rgb(114, 201, 255);
+  border-radius: 10px;
+  flex-direction: row;
+}

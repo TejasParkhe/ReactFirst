@@ -1,0 +1,388 @@
+$hello: #0e0a65;
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+ul,
+li {
+  padding: 0;
+  list-style-type: none;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.content_layout {
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1300px) {
+  .content_layout {
+    width: 1200px;
+  }
+}
+
+.App-header {
+  background-color: #a8b8ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.top-header {
+  background-color: $hello;
+  position: sticky;
+  top: 0;
+  .content_layout {
+    align-items: center;
+    justify-content: space-between;
+
+    > span {
+      display: inline-flex;
+      gap: 20px;
+    }
+
+    a {
+      background-color: yellow;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      &:not(.applyNow) {
+        background: none;
+        color: #fff;
+
+        svg {
+          color: yellow;
+        }
+      }
+
+      > span {
+        padding: 0 15px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+header {
+  background-color: #fff;
+  position: sticky;
+  top: 40px;
+  .content_layout {
+    border-bottom: 1px solid #ebebeb;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      a {
+        display: flex;
+        justify-content: flex-start;
+        text-decoration: none;
+        color: black;
+      }
+    }
+    div {
+      justify-content: flex-start;
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      button {
+        position: absolute;
+        border: none;
+        background: none;
+        right: 3px;
+      }
+
+      input {
+        border-radius: 5px solid black;
+        padding: 10px 15px;
+      }
+    }
+
+    nav {
+      display: flex;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      flex-direction: row;
+
+      a {
+        padding: 0 15px 0 15px;
+        text-decoration: none;
+        color: grey;
+        &:hover {
+          background-color: #8beee9;
+        }
+      }
+    }
+  }
+  .menu-icon {
+    display: none;
+  }
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.signup-form {
+  background: rgb(255, 208, 250);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.signup-form h1 {
+  text-align: center;
+  color: #333;
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.form-group {
+  flex: 1;
+
+  > label {
+    display: block;
+    font-weight: 20px;
+    font-size: 14px;
+    color: #333;
+  }
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.error-border {
+  border-color: #ff4444 !important;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.has-error input {
+  border-color: #ff4444;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #3367d6;
+}
+.menu-left {
+  position: fixed;
+  text-align: center;
+  left: -250px;
+  height: 100%;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    background-color: #8beee9;
+    border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .top-header {
+    display: none;
+  }
+  .header {
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex: 0 0 100%;
+    .menu-icon {
+      padding: 10px;
+      display: block;
+    }
+    .content_layout {
+      display: none;
+    }
+  }
+  .menu-left.open {
+    left: 0;
+    display: flex;
+    width: 35%;
+  }
+}
+.add {
+  position: relative;
+  input[type="text"] {
+    border: none;
+    font-size: 30px;
+
+    padding: 2px;
+    button {
+      position: absolute;
+      background-color: #b14ad4;
+      color: white;
+      right: 0;
+    }
+  }
+  input[type="radio"] {
+    color: #b14ad4;
+    position: absolute;
+    left: 0;
+  }
+}
+.top {
+  background-color: #b14ad4;
+  text-align: center;
+  padding: 5px;
+  h1 {
+    color: white;
+    font-size: 30px;
+  }
+}
+.todolist {
+  background-color: #a8b8ff;
+  padding: 30px 15px;
+}
+.list-row {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  > span {
+    display: flex;
+    position: relative;
+
+    &:first-child {
+      flex: 1;
+    }
+
+    &:last-child {
+      flex: 0 0 20%;
+    }
+  }
+
+  input[type="text"] {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    width: 100%;
+  }
+  button {
+    width: 53px;
+    background-color: #b14ad4;
+    border: none;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+select {
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  padding: 15px;
+}
+
+ul {
+  width: 100%;
+  list-style-type: none;
+}
+.task {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+  input[type="text"] {
+    padding: 8px 5px 8px 30px;
+    font-size: 20px;
+    width: 100%;
+    border: none;
+  }
+  input[type="radio"] {
+    position: absolute;
+    top: 0;
+
+    left: 0;
+    bottom: 0;
+    width: 20px;
+  }
+  button {
+    background-color: #b14ad4;
+    border: none;
+    padding: 10px;
+    position: absolute;
+    color: white;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    right: 0;
+  }
+}
+.task-filter {
+  select {
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    width: 100%;
+  }
+}
